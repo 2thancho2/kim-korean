@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>😳김민종음 번역기🤯</title>
+    <style>
+        body { font-family: 'Pretendard', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 50px; background-color: #f0f2f5; }
+        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
+        h1 { font-size: 24px; color: #333; text-align: center; }
+        textarea { width: 100%; height: 100px; padding: 15px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-size: 16px; resize: none; margin-bottom: 20px; }
+        .output-box { min-height: 100px; padding: 15px; background: #eef2ff; border-radius: 10px; border: 1px solid #c7d2fe; word-break: break-all; font-size: 18px; font-weight: bold; color: #020715; }
+        label { font-weight: bold; display: block; margin-bottom: 8px; color: #555; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>😳김민종음 번역기😳</h1>
+    <img src="https://i.ibb.co/Q3b6KWzG/IMG-1714.avif">
+    <label>입력 (한국어)</label>
+    <textarea id="input" placeholder="여기에 내용을 입력하세요..."></textarea>
+
+    <label>번역 결과</label>
+    <div id="output" class="output-box"></div>
+</div>
+
+<script>
+    // 1. 매핑 테이블 설정 (표준 유니코드 인덱스 순서)
+    const map_cho = [17, 9, 18, 0, 13, 2, 3, 5, 1, 6, 4, 7, 9, 8, 11, 12, 14, 15, 16];
+    const map_jung = [18, 7, 20, 15, 0, 3, 2, 14, 13, 9, 5, 19, 12, 13, 11, 10, 16, 17, 18, 1, 17];
+    const map_jong = [0, 26, 19, 10, 27, 5, 6, 7, 2, 8, 18, 3, 14, 12, 1, 15, 3, 5, 11, 6, 4, 7, 9, 11, 12, 14, 15, 16];
+
+    const inputArea = document.getElementById('input');
+    const outputDiv = document.getElementById('output');
+
+    inputArea.addEventListener('input', () => {
+        const text = inputArea.value;
+        let result = '';
+
+        for (let i = 0; i < text.length; i++) {
+            const charCode = text.charCodeAt(i);
+
+            // 한글 범위 확인 (AC00 ~ D7A3)
+            if (charCode >= 0xAC00 && charCode <= 0xD7A3) {
+                const offset = charCode - 0xAC00;
+                const cho = Math.floor(offset / 588);
+                const jung = Math.floor((offset % 588) / 28);
+                const jong = offset % 28;
+
+                // 규칙 적용
+                const n_cho = map_cho[cho];
+                const n_jung = map_jung[jung];
+                const n_jong = jong === 0 ? 0 : map_jong[jong];
+
+                // 재조합
+                const newChar = String.fromCharCode((n_cho * 588) + (n_jung * 28) + n_jong + 0xAC00);
+                result += newChar;
+            } else {
+                result += text[i]; // 한글 아니면 그대로
+            }
+        }
+        outputDiv.innerText = result;
+    });
+</script>
+
+</body>
+</html>
