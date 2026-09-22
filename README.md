@@ -1,6 +1,7 @@
 # 🚀 Kim-Korean(김민종음) Translater
 
 > The official translation and decoder for "Kim-Korean"—a secret script created by [@mean.l0l9](https://instagram.com/mean.l0l9), the 2026 school president of Chidong Middle School.
+> It works in Korean
 
 ---
 
