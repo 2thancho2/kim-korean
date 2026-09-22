@@ -7,7 +7,7 @@
 ## 📖 Project Overview
 * **Individual period**: 2026.04.28 ~ 2026.04.28 (one day)
 * **Deployment and Operational Status**: 🟡 Under maintenance
-* **Deployment URL / Run link**: [Click Here!](https://kim-korean.netlify.com)
+* **Deployment URL / Run link**: [Click Here!](https://kimkorean.netlify.app/)
 
 ### 💡 Planning Background and Objectives
 - **Problem Awareness**: We needed a new language system that only allows communication between people who know each other.
