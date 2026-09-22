@@ -37,7 +37,7 @@
 
 | **2thancho2** | **mean.l0l9** |
 | :---: | :---: |
-| <img src="https://avatars.githubusercontent.com/u/228949010?v=4" width="80"> | <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt2rQSFUVO03jVy2hV9_FiIFA8EnSPXzRvFxYgfiEwYQ&s=10" width="80"> |
+| <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh_dRl04FYi_qWaED3CopCqbTDtor8pHJlPydDSdmTZg&s=10" width="80"> | <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt2rQSFUVO03jVy2hV9_FiIFA8EnSPXzRvFxYgfiEwYQ&s=10" width="80"> |
 | [@2._.than](https://instagram.com/2._.than) | [@mean.l0l9](https://instagram.com/mean.l0l9) |
 | **Front-end / Design** | **Kim-Korean** |
 | UI design, translation, and implementation of interpretation functions | Produced "Kim-korean" |
